@@ -88,8 +88,19 @@ video {
   vertical-align: baseline;
 }
 
+$black: #00171f;
+$background: #e8eef2;
+$grey: #5a7684;
+$yellow: #fcba04;
+$wine: #49111c;
+$white: #fbfbff;
+
+* {
+  font-family: "Nunito", sans-serif;
+}
+
 main {
-  background-color: #5a7684;
+  background-color: $background;
   display: grid;
   grid-template-rows: 40px 1fr 30px;
   grid-template-columns: 1fr;
@@ -100,6 +111,7 @@ main {
 
 h1 {
   font-size: 3rem;
+  font-weight: 700;
   margin: 1rem 0;
 }
 
@@ -108,23 +120,36 @@ p {
 }
 
 header {
-  color: white;
+  color: $black;
 }
 
 section {
-  background-color: #fbfbff;
   border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: flex;
   place-items: center;
-  padding: 3rem;
+  padding: 3rem 0;
   text-align: center;
   width: 50vw;
   min-width: 300px;
 
+  article {
+    color: $black;
+    padding: 3rem;
+  }
+
   aside {
-    width: 100px;
     align-self: normal;
+    display: flex;
+    place-items: center;
+    padding: 3rem;
+
+    img {
+      border-radius: 50%;
+      border: 5px solid $grey;
+      padding: 5px;
+      width: 140px;
+      height: 140px;
+    }
   }
 
   hr {
@@ -133,5 +158,5 @@ section {
 }
 
 footer {
-  color: white;
+  color: $white;
 }
