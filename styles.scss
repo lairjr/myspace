@@ -121,15 +121,15 @@ section {
   text-align: center;
   width: 50vw;
   min-width: 300px;
-}
 
-section hr {
-  align-self: normal;
-}
+  aside {
+    width: 100px;
+    align-self: normal;
+  }
 
-section aside {
-  width: 100px;
-  align-self: normal;
+  hr {
+    align-self: normal;
+  }
 }
 
 footer {

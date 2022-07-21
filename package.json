@@ -2,7 +2,6 @@
   "name": "myspace",
   "version": "1.0.0",
   "description": "This is my space website.",
-  "main": "index.js",
   "scripts": {
     "sass": "./node_modules/sass/sass.js styles.scss styles.css"
   },
