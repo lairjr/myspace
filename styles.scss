@@ -1,69 +1,137 @@
 /* This are some resets */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
 main {
-    background-color: #5A7684;
-    display: grid;
-    grid-template-rows: 40px 1fr 30px;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    height: 100vh;
-    width: 100vw;
+  background-color: #5a7684;
+  display: grid;
+  grid-template-rows: 40px 1fr 30px;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 h1 {
-    font-size: 3rem;
-    margin: 1rem 0;
+  font-size: 3rem;
+  margin: 1rem 0;
 }
 
 p {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 header {
-    color: white;
+  color: white;
 }
 
 section {
-    background-color: #FBFBFF;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    display: flex;
-    place-items: center;
-    padding: 3rem;
-    text-align: center;
-    width: 50vw;
-    min-width: 300px;
+  background-color: #fbfbff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  place-items: center;
+  padding: 3rem;
+  text-align: center;
+  width: 50vw;
+  min-width: 300px;
 }
 
 section hr {
-    align-self: normal;
+  align-self: normal;
 }
 
 section aside {
-    width: 100px;
-    align-self: normal;
+  width: 100px;
+  align-self: normal;
 }
 
 footer {
-    color: white;
+  color: white;
 }
