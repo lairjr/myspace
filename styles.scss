@@ -95,6 +95,8 @@ $yellow: #fcba04;
 $wine: #49111c;
 $white: #fbfbff;
 
+$xl: 1200px;
+
 * {
   font-family: "Nunito", sans-serif;
 }
@@ -102,7 +104,7 @@ $white: #fbfbff;
 main {
   background-color: $background;
   display: grid;
-  grid-template-rows: 40px 1fr 30px;
+  grid-template-rows: 1fr 50px;
   grid-template-columns: 1fr;
   justify-items: center;
   height: 100vh;
@@ -119,18 +121,18 @@ p {
   font-size: 1.5rem;
 }
 
-header {
-  color: $black;
-}
-
 section {
   border-radius: 5px;
   display: flex;
   place-items: center;
   padding: 3rem 0;
   text-align: center;
-  width: 50vw;
+  width: 80vw;
   min-width: 300px;
+
+  @media only screen and (min-width: $xl) {
+    width: 60vw;
+  }
 
   article {
     color: $black;
@@ -150,6 +152,16 @@ section {
       width: 140px;
       height: 140px;
     }
+
+    nav {
+      padding: 1rem 0;
+
+      a {
+        display: block;
+        padding: 0.3rem 0;
+        text-transform: uppercase;
+      }
+    }
   }
 
   hr {
@@ -158,5 +170,19 @@ section {
 }
 
 footer {
-  color: $white;
+  .social-networks {
+    display: flex;
+
+    a {
+      border-radius: 50%;
+      color: $black;
+      font-size: 1.5rem;
+      padding: 10px;
+      line-height: 1rem;
+    }
+
+    a:hover {
+      background-color: $wine;
+    }
+  }
 }
