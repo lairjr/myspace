@@ -203,12 +203,14 @@ footer {
       border-radius: 50%;
       color: $black;
       font-size: 1.5rem;
-      padding: 10px;
-      line-height: 1rem;
+      padding: 12px;
+      line-height: 0.5rem;
+
+      transition: background-color 100ms linear;
     }
 
     a:hover {
-      background-color: $white;
+      background-color: rgba(0, 0, 0, 0.4);
     }
   }
 }
