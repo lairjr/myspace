@@ -106,6 +106,7 @@ $wine: #49111c;
 $white: #fbfbff;
 
 $xl: 1200px;
+$lg: 720px;
 
 @mixin gradient-font {
   background: linear-gradient(
@@ -128,6 +129,7 @@ main {
   grid-template-rows: 1fr 50px;
   grid-template-columns: 1fr;
   justify-items: center;
+  overflow: auto;
   height: 100vh;
   width: 100vw;
 }
@@ -156,12 +158,17 @@ p {
 section {
   border-radius: 5px;
   display: flex;
+  flex-direction: column;
   place-items: center;
-  padding: 3rem 0;
   text-align: center;
-  width: 80vw;
+  width: 100vw;
   min-width: 300px;
   position: relative;
+
+  @media only screen and (min-width: $lg) {
+    flex-direction: row;
+    padding: 3rem 0;
+  }
 
   @media only screen and (min-width: $xl) {
     width: 60vw;
@@ -182,8 +189,14 @@ section {
   aside {
     align-self: normal;
     display: flex;
+    flex-direction: column;
     place-items: center;
-    padding: 3rem;
+    padding: 1rem 0;
+
+    @media only screen and (min-width: $lg) {
+      flex-direction: row;
+      padding: 3rem;
+    }
 
     img {
       border-radius: 50%;
