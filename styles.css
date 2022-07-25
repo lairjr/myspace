@@ -98,7 +98,7 @@ a:active {
 
 /* End of resets */
 * {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Karla", sans-serif;
 }
 
 main {
@@ -121,6 +121,16 @@ h1 {
   text-shadow: 0px 3px 9px rgba(0, 0, 0, 0.4);
 }
 
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 2rem 0;
+  background: linear-gradient(90deg, rgb(73, 17, 28) 18%, rgb(228, 71, 79) 85%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 3px 9px rgba(0, 0, 0, 0.4);
+}
+
 p {
   font-size: 1.5rem;
   margin: 1rem 0;
@@ -134,6 +144,7 @@ section {
   text-align: center;
   width: 80vw;
   min-width: 300px;
+  position: relative;
 }
 @media only screen and (min-width: 1200px) {
   section {
@@ -143,6 +154,11 @@ section {
 section article {
   color: #00171f;
   padding: 3rem;
+  transition: opacity 200ms linear, position 200ms;
+}
+section article a {
+  color: #49111c;
+  border-bottom: 2px dotted #49111c;
 }
 section aside {
   align-self: normal;
@@ -163,6 +179,7 @@ section aside nav {
 section aside nav a {
   display: block;
   padding: 0.3rem 0;
+  font-size: 1.2rem;
   text-transform: uppercase;
   background: linear-gradient(90deg, rgb(73, 17, 28) 18%, rgb(228, 71, 79) 85%);
   -webkit-background-clip: text;
@@ -172,6 +189,22 @@ section aside nav a {
 section hr {
   align-self: normal;
 }
+section .hidden {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+section .visible {
+  position: relative;
+  opacity: 1;
+  z-index: 0;
+}
+section .pull-left {
+  text-align: start;
+}
+section .pull-right {
+  text-align: end;
+}
 
 footer .social-networks {
   display: flex;
@@ -180,11 +213,12 @@ footer .social-networks a {
   border-radius: 50%;
   color: #00171f;
   font-size: 1.5rem;
-  padding: 10px;
-  line-height: 1rem;
+  padding: 12px;
+  line-height: 0.5rem;
+  transition: background-color 100ms linear;
 }
 footer .social-networks a:hover {
-  background-color: #fbfbff;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 /*# sourceMappingURL=styles.css.map */
