@@ -15,7 +15,7 @@
   <body>
     <main>
       <section>
-        <article>
+        <article id="about" class="visible">
           <h1>Hey! I'm Lair!</h1>
 
           <p>
@@ -26,9 +26,16 @@
 
           <p>
             I've been maintaning a tournament management web application called
-            Go Champs. PR's are welcome by the way. And you can also find some
-            of my code in others applications like Rackspace Dashboard and
-            Valor.
+            <a href="https://go-champs.com/" target="_blank">Go Champs</a>
+            (PR's are welcome by the way) and you can also find some of my code
+            in others applications like
+            <a href="https://www.rackspace.com/" target="_blank"
+              >Rackspace Dashboard</a
+            >
+            and
+            <a href="https://valor.globo.com/" target="_blank"
+              >Valor Econômico</a
+            >.
           </p>
 
           <p>
@@ -38,6 +45,34 @@
           </p>
 
           <p>Feel free to reach me out at lairjr@outlook.com.</p>
+        </article>
+
+        <article id="projects" class="hidden">
+          <div>
+            <h2>
+              <a href="https://go-champs.com/" target="_blank">Go Champs!</a>
+            </h2>
+
+            <p>
+              This application is to help tournament organizers to publish
+              information about their tournaments. So they can publish games,
+              standings, brackets, player stats and at more using this App.
+            </p>
+          </div>
+
+          <div>
+            <h2>
+              <a href="https://e-comvida.netlify.app/" target="_blank"
+                >é-comvida</a
+              >
+            </h2>
+
+            <p>
+              I built this application at the beggining of the pandemic to
+              support local business that would be in favor of all the Health
+              Depertament regulations.
+            </p>
+          </div>
         </article>
 
         <hr />
@@ -50,8 +85,8 @@
             />
 
             <nav>
-              <a href="/"> About Me </a>
-              <a href=""> My Projects </a>
+              <a id="aboutLink" href="#about"> About Me </a>
+              <a id="projectsLink" href="#projects"> My Projects </a>
             </nav>
           </div>
         </aside>
@@ -73,6 +108,33 @@
     </main>
   </body>
 
+  <script>
+    const aboutMe = document.getElementById("about");
+    const projects = document.getElementById("projects");
+    const visibleClass = "visible";
+    const hiddenClass = "hidden";
+
+    function showAbout() {
+      aboutMe.classList.add(visibleClass);
+      aboutMe.classList.remove(hiddenClass);
+
+      projects.classList.add(hiddenClass);
+      projects.classList.remove(visibleClass);
+    }
+
+    function showProjects() {
+      aboutMe.classList.add(hiddenClass);
+      aboutMe.classList.remove(visibleClass);
+
+      projects.classList.add(visibleClass);
+      projects.classList.remove(hiddenClass);
+    }
+
+    document.getElementById("aboutLink").addEventListener("click", showAbout);
+    document
+      .getElementById("projectsLink")
+      .addEventListener("click", showProjects);
+  </script>
   <script
     src="https://kit.fontawesome.com/f4e8474cb9.js"
     crossorigin="anonymous"
