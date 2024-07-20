@@ -1,157 +1,100 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lair Júnior</title>
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="icon" href="./favicon.png" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Karla"
-    />
-    <script
-      src="https://kit.fontawesome.com/f4e8474cb9.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
 
-  <body>
-    <main>
-      <section>
-        <article id="about" class="visible">
-          <h1>Hey! I'm Lair!</h1>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lair Júnior | Software Engineer</title>
+  <link rel="icon" href="./favicon.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <link href="./styles.css" rel="stylesheet" type="text/css" />
+</head>
 
-          <p>
-            I’m a full stack engineer who loves functional programming. I have
-            over 12 years of experience building apps using mainly JavaScript
-            and Elixir.
-          </p>
+<body>
+  <div id="home" class="page">
+    <nav class="menu">
+        <ul>
+            <li class="tooltip-container">
+                <a href="#/home">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/><path d="M9 22V12h6v10M2 10.6L12 2l10 8.6"/></svg>
+                </a>
+                <span class="tooltip-text">Home</span>
+            </li>
+            <li class="tooltip-container">
+                <a href="#/about">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.52 19c.64-2.2 1.84-3 3.22-3h6.52c1.38 0 2.58.8 3.22 3"/><circle cx="12" cy="10" r="3"/><circle cx="12" cy="12" r="10"/></svg>
+                </a>
+                <span class="tooltip-text">About</span>
+            </li>
+            <li class="tooltip-container">
+                <a href="#/work">
+                    <svg xmlns="http://www.w3.org/2000/svg"  width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                </a>
+                <span class="tooltip-text">Work</span>
+            </li>
+        </ul>
+    </nav>
 
-          <p>
-            Currently, I’m working as TVC at Google in internal projects and I’m
-            responsible for applications with JavaScript/TypeScript using Google
-            high tech cloud tools.
-          </p>
+    <div class="container">
+      <div class="introduction">
+        <h3 class="greeting">Hey! I'm </h3>
+        
+        <h1>Lair Júnior <em class="pronunciation">(La-ear)</em></h1>
+        <span>Nice seeing you here! :D</span>
 
-          <p>
-            My love for programming goes beyond my work life, therefore I have
-            been maintaning a tournament management web application called
-            <a href="https://go-champs.com/" target="_blank">Go Champs</a> (PR's
-            are welcome by the way) and you can also find more of my code on
-            internet if you navigate to
-            <a href="https://www.rackspace.com/" target="_blank"
-              >Rackspace Dashboard</a
-            >
-            or
-            <a href="https://valor.globo.com/" target="_blank"
-              >Valor Econômico</a
-            >.
-          </p>
-
-          <p>
-            I would love to share more about my work and how I can be part of
-            high performing teams.
-          </p>
-
-          <p>Feel free to reach me out at lairjr@outlook.com.</p>
-        </article>
-
-        <article id="projects" class="hidden">
-          <div class="pull-left">
-            <h2>
-              <a href="https://go-champs.com/" target="_blank">Go Champs!</a>
-            </h2>
-
-            <p>
-              This application is to help tournament organizers to publish
-              information about their tournaments. So they can inform their
-              audience about games, standings, playoff brackets, player stats
-              and much more using this App.
-            </p>
-
-            <p>
-              <strong>Tech Stack:</strong> TypeScrit React, Elixir Phoenix,
-              Postgress.
-            </p>
-          </div>
-
-          <div class="pull-right">
-            <h2>
-              <a href="https://e-comvida.netlify.app/" target="_blank"
-                >é-comvida</a
-              >
-            </h2>
-
-            <p>
-              I launched this app when the CODID-19 pandamic started. The idea
-              was to inform people the restaurants that would respect all the
-              Departament of Health norms so people could consume from places
-              that were acting to prevent the spread of the virus.
-            </p>
-
-            <p><strong>Tech Stack:</strong> TypeScrit Angular, Firebase.</p>
-          </div>
-        </article>
-
-        <hr />
-
-        <aside>
-          <div>
-            <img
-              src="https://avatars.githubusercontent.com/u/9889113?v=4"
-              alt="Lair Avatar"
-            />
-
-            <nav>
-              <a id="aboutLink" href="#about"> About Me </a>
-              <a id="projectsLink" href="#projects"> My Projects </a>
-            </nav>
-          </div>
-        </aside>
-      </section>
-
-      <footer>
-        <div class="social-networks">
-          <a href="https://github.com/lairjr/" target="_blank">
-            <i class="fa-brands fa-github-alt"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/lairjr/" target="_blank">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a href="https://www.instagram.com/lair.i.jr/" target="_blank">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
+        <div class="rotate">
+            <h2>Software Engineer</h2>
+            <h2>former Google</h2>
+            <h2>former Thoughtworks</h2>
         </div>
-      </footer>
-    </main>
-  </body>
 
-  <script>
-    const aboutMe = document.getElementById("about");
-    const projects = document.getElementById("projects");
-    const visibleClass = "visible";
-    const hiddenClass = "hidden";
+        <article class="short-about">
+          <em>tl;dr</em>
 
-    function showAbout() {
-      aboutMe.classList.add(visibleClass);
-      aboutMe.classList.remove(hiddenClass);
+          <p>
+            I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+            since 2008 and I'm always excited to create tools to facilitate people live better.
+          </p>
 
-      projects.classList.add(hiddenClass);
-      projects.classList.remove(visibleClass);
-    }
+          <p>
+            I have been maintaning a tournament management web application called 
+            <a href="https://go-champs.com" target="_blank">Go Champs</a> (PRs are welcome) and also I'm currently writting software at 
+            <a href="https://checkr.com" target="_blank">Checkr</a>.
+          </p>
+        </article>
+      </div>
 
-    function showProjects() {
-      aboutMe.classList.add(hiddenClass);
-      aboutMe.classList.remove(visibleClass);
+      <div class="portrait">
+        <div class="image">
+          <img src="./eu1nobg.png" alt="eu" title="eu" width="100%" height="100%" />
+        </div>
 
-      projects.classList.add(visibleClass);
-      projects.classList.remove(hiddenClass);
-    }
+        <div class="social-media">
+            <ul>
+                <li>
+                    <a href="https://github.com/lairjr/" target="_blank">
+                        <svg width="100%" height="100%" viewBox="0 0 20.00 20.00" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#bb3a3a" stroke="#bb3a3a" transform="rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.04"></g><g id="SVGRepo_iconCarrier"> <title>github [#142]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7559.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399" id="github-[#142]"> </path> </g> </g> </g> </g></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/lairjr" target="_blank">
+                        <svg width="100%" height="100%" viewBox="-2 -2 24.00 24.00" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>linkedin [#161]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-180.000000, -7479.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M144,7339 L140,7339 L140,7332.001 C140,7330.081 139.153,7329.01 137.634,7329.01 C135.981,7329.01 135,7330.126 135,7332.001 L135,7339 L131,7339 L131,7326 L135,7326 L135,7327.462 C135,7327.462 136.255,7325.26 139.083,7325.26 C141.912,7325.26 144,7326.986 144,7330.558 L144,7339 L144,7339 Z M126.442,7323.921 C125.093,7323.921 124,7322.819 124,7321.46 C124,7320.102 125.093,7319 126.442,7319 C127.79,7319 128.883,7320.102 128.883,7321.46 C128.884,7322.819 127.79,7323.921 126.442,7323.921 L126.442,7323.921 Z M124,7339 L129,7339 L129,7326 L124,7326 L124,7339 Z" id="linkedin-[#161]"> </path> </g> </g> </g> </g></svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/lair.i.jr" target="_blank">
+                        <svg width="100%" height="100%" viewBox="-1 -1 22.00 22.00" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>instagram [#167]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-340.000000, -7439.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M289.869652,7279.12273 C288.241769,7279.19618 286.830805,7279.5942 285.691486,7280.72871 C284.548187,7281.86918 284.155147,7283.28558 284.081514,7284.89653 C284.035742,7285.90201 283.768077,7293.49818 284.544207,7295.49028 C285.067597,7296.83422 286.098457,7297.86749 287.454694,7298.39256 C288.087538,7298.63872 288.809936,7298.80547 289.869652,7298.85411 C298.730467,7299.25511 302.015089,7299.03674 303.400182,7295.49028 C303.645956,7294.859 303.815113,7294.1374 303.86188,7293.08031 C304.26686,7284.19677 303.796207,7282.27117 302.251908,7280.72871 C301.027016,7279.50685 299.5862,7278.67508 289.869652,7279.12273 M289.951245,7297.06748 C288.981083,7297.0238 288.454707,7296.86201 288.103459,7296.72603 C287.219865,7296.3826 286.556174,7295.72155 286.214876,7294.84312 C285.623823,7293.32944 285.819846,7286.14023 285.872583,7284.97693 C285.924325,7283.83745 286.155174,7282.79624 286.959165,7281.99226 C287.954203,7280.99968 289.239792,7280.51332 297.993144,7280.90837 C299.135448,7280.95998 300.179243,7281.19026 300.985224,7281.99226 C301.980262,7282.98483 302.473801,7284.28014 302.071806,7292.99991 C302.028024,7293.96767 301.865833,7294.49274 301.729513,7294.84312 C300.829003,7297.15085 298.757333,7297.47145 289.951245,7297.06748 M298.089663,7283.68956 C298.089663,7284.34665 298.623998,7284.88065 299.283709,7284.88065 C299.943419,7284.88065 300.47875,7284.34665 300.47875,7283.68956 C300.47875,7283.03248 299.943419,7282.49847 299.283709,7282.49847 C298.623998,7282.49847 298.089663,7283.03248 298.089663,7283.68956 M288.862673,7288.98792 C288.862673,7291.80286 291.150266,7294.08479 293.972194,7294.08479 C296.794123,7294.08479 299.081716,7291.80286 299.081716,7288.98792 C299.081716,7286.17298 296.794123,7283.89205 293.972194,7283.89205 C291.150266,7283.89205 288.862673,7286.17298 288.862673,7288.98792 M290.655732,7288.98792 C290.655732,7287.16159 292.140329,7285.67967 293.972194,7285.67967 C295.80406,7285.67967 297.288657,7287.16159 297.288657,7288.98792 C297.288657,7290.81525 295.80406,7292.29716 293.972194,7292.29716 C292.140329,7292.29716 290.655732,7290.81525 290.655732,7288.98792" id="instagram-[#167]"> </path> </g> </g> </g> </g></svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 
-    document.getElementById("aboutLink").addEventListener("click", showAbout);
-    document
-      .getElementById("projectsLink")
-      .addEventListener("click", showProjects);
-  </script>
 </html>
