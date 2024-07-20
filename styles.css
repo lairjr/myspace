@@ -1,4 +1,11 @@
-/* This are some resets */
+/** Begin css reset */
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
 html,
 body,
 div,
@@ -88,155 +95,347 @@ video {
   vertical-align: baseline;
 }
 
-a,
-a:hover,
-a:focus,
-a:active {
-  text-decoration: none;
-  color: inherit;
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
-/* End of resets */
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/** End css reset */
+
 * {
-  font-family: "Karla", sans-serif;
-}
-
-main {
-  background-color: #eeeeee;
-  display: grid;
-  grid-template-rows: 1fr 50px;
-  grid-template-columns: 1fr;
-  justify-items: center;
-  overflow: auto;
-  height: 100vh;
-  width: 100vw;
+  font-family: "Rubik" !important;
+  letter-spacing: .2px;
 }
 
 h1 {
   font-size: 3rem;
-  font-weight: 700;
-  margin: 2rem 0;
-  background: linear-gradient(90deg, rgb(73, 17, 28) 18%, rgb(228, 71, 79) 85%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0px 3px 9px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  margin: 1.75rem 0;
+  
+  display: flex;
+  align-items: center;
 }
 
 h2 {
   font-size: 2rem;
-  font-weight: 700;
-  margin: 2rem 0;
-  background: linear-gradient(90deg, rgb(73, 17, 28) 18%, rgb(228, 71, 79) 85%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0px 3px 9px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  margin: 1.5rem 0;
 }
 
-p {
-  font-size: 1.5rem;
+h3 {
+  font-size: 1.75rem;
+  font-weight: bold;
   margin: 1rem 0;
 }
 
-strong {
-  font-weight: 900;
+p {
+  margin: 1rem 0;
 }
 
-section {
+em {
+  font-style: italic;
+}
+
+a {
+    color: #2274A5;
+    cursor: pointer;
+    transition: color .5s;
+}
+
+a:hover {
+    color: #12b0ff;
+}
+
+.pronunciation {
+    margin: auto 1rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    height: 100vh;
+    position: relative;
+    background: #E9D758;
+    color: #170312;
+}
+
+.menu {
+    height: 80px;
+    position: absolute;
+    background: #170312;
+    top: 0;
+    width: 100%;
+    box-shadow: 0px 3px 5px 4px rgba(0, 0, 0, 0.55);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: .4s ease-in 0s 1 slideInFromTop;
+}
+
+.menu ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1px;
+    margin: 1rem 0;
+    background-color: #E9D758;
+    color: white;
+}
+
+.menu ul li {
+    height: 36px;
+    width: 40px;
+    padding: 14px 1rem;
+    background-color: #170312;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+  display: flex;
+  max-width: 1140px;
+}
+
+.introduction {
+  width: 50%;
+  animation: .4s ease-out 0s 1 slideInFromBottom;
+}
+
+.introduction h1, h2, h3, span {
+    padding: 0 1rem;
+}
+
+.introduction .greeting {
+    color: #2274A5;
+}
+
+.introduction .short-about {   
+    margin: 2rem 0;
+    background: burlywood;
+    padding: 1rem;
+    /* border-radius: 12px; */
+    box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.55);
+}
+
+.introduction .rotate {
+    overflow: hidden;
+    height: 2rem;
+    padding: 1.5rem 0;
+    position: relative;
+}
+
+.introduction .rotate h2 {
+    position: absolute;
+    height: 2rem;
+    top: -100px;
+
+    animation: rotateText 6s infinite;
+}
+
+.introduction .rotate h2:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.introduction .rotate h2:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.introduction .rotate h2:nth-child(3) {
+    animation-delay: 4s;
+}
+
+.portrait {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 50%;
+}
+
+.portrait .image {
+    /* bottom: 0; */
+    height: 410px;
+    border: 11px solid;
+    border-radius: 121px;
+    border-color: #170312;
+    background: lemonchiffon;
+    overflow: hidden;
+    /* backdrop-filter: blur(53px); */
+    /* box-shadow: 0 0 52px rgba(0, 0, 0, 0.7); */
+    box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.55);
+}
+
+.portrait .social-media {
+    position: absolute;
+    right: 2rem;
+    animation: .4s ease-out 0s 1 slideInFromRight;
+}
+
+.portrait .social-media ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.portrait .social-media ul li {
+    background-color: #170312;
+    padding: 5px;
+    border-radius: 5px;
+    height: 30px;
+    width: 30px;
+    margin: 4px 0;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.55);
+}
+
+.tooltip-container {
+    position: relative;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    background-color: #170312;
+    box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.55);
+    color: white;
+    text-align: center;
+    padding: 8px 10px;
+    position: absolute;
+    z-index: 1;
+    top: 125%; /* Position below the tooltip container */
+    left: 50%;
+    transform: translateX(-50%); /* Center the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 1rem;
+}
+
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip-text::after {
+    content: "";
+    position: absolute;
+    bottom: 100%; /* At the top of the tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #170312 transparent;
+}
+
+/* 
+.portrait .image {
+  width: 200px;
+  height: 267px;
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  place-items: center;
-  text-align: center;
-  width: 100vw;
-  min-width: 300px;
-  position: relative;
-}
-@media only screen and (min-width: 720px) {
-  section {
-    flex-direction: row;
-    padding: 3rem 0;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  section {
-    width: 60vw;
-  }
-}
-section article {
-  color: #00171f;
-  padding: 3rem;
-  transition: opacity 200ms linear, position 200ms;
-}
-section article a {
-  color: #49111c;
-  border-bottom: 2px dotted #49111c;
-}
-section aside {
-  align-self: normal;
-  display: flex;
-  flex-direction: column;
-  place-items: center;
-  padding: 1rem 0;
-}
-@media only screen and (min-width: 720px) {
-  section aside {
-    flex-direction: row;
-    padding: 3rem;
-  }
-}
-section aside img {
-  border-radius: 50%;
-  border: 5px solid #00171f;
-  padding: 5px;
-  width: 140px;
-  height: 140px;
-}
-section aside nav {
-  padding: 1rem 0;
-}
-section aside nav a {
-  display: block;
-  padding: 0.3rem 0;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  background: linear-gradient(90deg, rgb(73, 17, 28) 18%, rgb(228, 71, 79) 85%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0px 3px 9px rgba(0, 0, 0, 0.4);
-}
-section hr {
-  align-self: normal;
-}
-section .hidden {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-section .visible {
-  position: relative;
-  opacity: 1;
-  z-index: 0;
-}
-section .pull-left {
-  text-align: start;
-}
-section .pull-right {
-  text-align: end;
 }
 
-footer .social-networks {
-  display: flex;
-}
-footer .social-networks a {
-  border-radius: 50%;
-  color: #00171f;
-  font-size: 1.5rem;
-  padding: 12px;
-  line-height: 0.5rem;
-  transition: background-color 100ms linear;
-}
-footer .social-networks a:hover {
-  background-color: rgba(0, 0, 0, 0.4);
+.portrait .social-media {
+  padding: 1rem;
+} */
+
+/** Animations */
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
-/*# sourceMappingURL=styles.css.map */
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(+50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+      transform: translateY(+30%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+@keyframes rotateText {
+    0% {
+        top: 100px;
+        opacity: 0;
+    }
+
+    10% {
+        top: 0;
+        opacity: 1;
+    }
+
+    30% {
+        top: 0;
+        opacity: 1;
+    }
+
+    40% {
+        top: -100px;
+        opacity: 0;
+    }
+
+    100% {
+        top: -100px;
+        opacity: 0;
+    }
+}
