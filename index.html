@@ -11,34 +11,16 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
     rel="stylesheet">
-  <link href="./styles.css" rel="stylesheet" type="text/css" />
+  <link href="./colors.css" rel="stylesheet" type="text/css" />
+  <link href="./common.css" rel="stylesheet" type="text/css" />
+  <link href="./home.css" rel="stylesheet" type="text/css" />
+  <link href="./about.css " rel="stylesheet" type="text/css" />
+  <link href="./work.css" rel="stylesheet" type="text/css" />
+  <link href="./footer.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
   <div id="home" class="page">
-    <nav class="menu">
-        <ul>
-            <li class="tooltip-container">
-                <a href="#/home">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/><path d="M9 22V12h6v10M2 10.6L12 2l10 8.6"/></svg>
-                </a>
-                <span class="tooltip-text">Home</span>
-            </li>
-            <li class="tooltip-container">
-                <a href="#/about">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.52 19c.64-2.2 1.84-3 3.22-3h6.52c1.38 0 2.58.8 3.22 3"/><circle cx="12" cy="10" r="3"/><circle cx="12" cy="12" r="10"/></svg>
-                </a>
-                <span class="tooltip-text">About</span>
-            </li>
-            <li class="tooltip-container">
-                <a href="#/work">
-                    <svg xmlns="http://www.w3.org/2000/svg"  width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-                </a>
-                <span class="tooltip-text">Work</span>
-            </li>
-        </ul>
-    </nav>
-
     <div class="container">
       <div class="introduction">
         <h3 class="greeting">Hey! I'm </h3>
@@ -61,8 +43,8 @@
           </p>
 
           <p>
-            I have been maintaning a tournament management web application called 
-            <a href="https://go-champs.com" target="_blank">Go Champs</a> (PRs are welcome) and also I'm currently writting software at 
+            I have been maintaning a tournament management web application called
+            <a href="https://go-champs.com" target="_blank">Go Champs</a> (PRs are welcome) and also I'm currently writting software at
             <a href="https://checkr.com" target="_blank">Checkr</a>.
           </p>
         </article>
@@ -95,6 +77,240 @@
       </div>
     </div>
   </div>
+
+  <div id="about" class="about">
+    <div class="container">
+        <h2>About me</h2>
+
+        <div class="cards-container">
+            <div class="card skills">
+                <h3>Skills</h3>
+                <ul>
+                    <li>
+                        <span class="description">JavaScript</span>
+                        <span class="line"></span>
+                        <span class="level">Expert</span>
+                    </li>
+                    <li>
+                        <span class="description">TypeScript</span>
+                        <span class="line"></span>
+                        <span class="level">Expert</span>
+                    </li>
+                    <li>
+                        <span class="description">Elixir</span>
+                        <span class="line"></span>
+                        <span class="level">Advanced</span>
+                    </li>
+                    <li>
+                        <span class="description">Ruby</span>
+                        <span class="line"></span>
+                        <span class="level">Advanced</span>
+                    </li>
+                    <li>
+                        <span class="description">Dart</span>
+                        <span class="line"></span>
+                        <span class="level">Advanced</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card-separator"><span class="line"></span></div>
+        
+            <article class="card bio">
+                <h3>Bio</h3>
+
+                <p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p>
+        
+                <p>
+                    I have been maintaning a tournament management web application called 
+                    <a href="https://go-champs.com" target="_blank">Go Champs</a> (PRs are welcome) and also I'm currently writting software at 
+                    <a href="https://checkr.com" target="_blank">Checkr</a>.
+                </p>
+            </article>
+        </div>
+    </div>
+
+  </div>
+
+
+  <div id="work" class="work">
+      <div class="container">
+          <h2>Work</h2>
+
+          <div class="cards-container">
+            <div class="card">
+              <div class="info">
+                <header>Engineer maintainer</header>
+                <span class="period">2019 - Present</span>
+              </div>
+  
+              <div class="description">
+                <header>Go Champs!</header>
+  
+                <ul>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                </ul>
+              </div>
+            </div>
+  
+            <div class="card">
+              <div class="info">
+                <header>Sr. Soft Engineer</header>
+                <span class="period">2022 - Present</span>
+              </div>
+  
+              <div class="description">
+                <header>Checkr</header>
+  
+                <ul>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                </ul>
+              </div>
+            </div>
+  
+            <div class="card">
+              <div class="info">
+                <header>Sr. Soft Engineer</header>
+                <span class="period">2019 - 2022</span>
+              </div>
+  
+              <div class="description">
+                <header>Google - via EPAM</header>
+  
+                <ul>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                </ul>
+              </div>
+            </div>
+  
+  
+            <div class="card">
+              <div class="info">
+                <header>Sr. Soft Engineer</header>
+                <span class="period">2016 - 2019</span>
+              </div>
+  
+              <div class="description">
+                <header>ThoughtWorks</header>
+  
+                <ul>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                  <li><p>
+                    I’m a full stack engineer passionate for functional programming and XP practices. I've being building apps
+                    since 2008 and I'm always excited to create tools to facilitate people live better.
+                </p></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+        © 2024 copyright Lair Júnior all right reserved
+    </div>
+  </footer>
+
+  <nav class="menu">
+    <ul>
+        <li class="tooltip-container">
+            <a href="#/home">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 9v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V9"/><path d="M9 22V12h6v10M2 10.6L12 2l10 8.6"/></svg>
+            </a>
+            <span class="tooltip-text">Home</span>
+        </li>
+        <li class="tooltip-container">
+            <a href="#/about">
+                <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.52 19c.64-2.2 1.84-3 3.22-3h6.52c1.38 0 2.58.8 3.22 3"/><circle cx="12" cy="10" r="3"/><circle cx="12" cy="12" r="10"/></svg>
+            </a>
+            <span class="tooltip-text">About</span>
+        </li>
+        <li class="tooltip-container">
+            <a href="#/work">
+                <svg xmlns="http://www.w3.org/2000/svg"  width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </a>
+            <span class="tooltip-text">Work</span>
+        </li>
+    </ul>
+</nav>
+
+  <script src="script.js"></script>
 </body>
 
 </html>

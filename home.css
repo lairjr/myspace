@@ -1,0 +1,156 @@
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 60px;
+    background: var(--light-brown);
+    color: var(--black);
+}
+
+.page h1, .page h2, .page h3, .page span {
+    padding: 0 1rem;
+}
+
+.introduction {
+    width: 100%;
+    animation: .4s ease-out 0s 1 slideInFromBottom;
+}
+
+.introduction .pronunciation {
+    margin: auto 1rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.introduction .greeting {
+    color: var(--blue);
+}
+
+.introduction .short-about {   
+    margin: 2rem 0;
+    background: #FBA04B;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+}
+
+.introduction .rotate {
+    overflow: hidden;
+    height: 2rem;
+    padding: 1.5rem 0;
+    position: relative;
+}
+
+.introduction .rotate h2 {
+    position: absolute;
+    height: 2rem;
+    top: -100px;
+
+    animation: rotateText 6s infinite;
+}
+
+.introduction .rotate h2:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.introduction .rotate h2:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.introduction .rotate h2:nth-child(3) {
+    animation-delay: 4s;
+}
+
+.portrait {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.portrait .image {
+    height: 350px;
+    border: 5px solid;
+    border-radius: 10px;
+    border-color: var(--black);
+    background: lemonchiffon;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.portrait .social-media {
+    padding: 1rem 0;
+    animation: .4s ease-out 0s 1 slideInFromRight;
+}
+
+.portrait .social-media ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.portrait .social-media ul li {
+    background-color: var(--black);
+    padding: 5px;
+    border-radius: 5px;
+    height: 30px;
+    width: 30px;
+    margin: 4px 5px;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.55);
+    transition: height .3s;
+    transition: width .3s;
+}
+
+.portrait .social-media ul li:hover {
+    height: 38px;
+    width: 38px;
+}
+
+/** Begin media queries */
+
+/* For tablets: */
+@media only screen and (min-width: 600px) {
+    .page {
+        height: calc(100vh - 80px);
+        padding-top: unset;
+    }
+
+    .introduction {
+        width: 50%;
+    }
+
+    .portrait {
+        width: 50%;
+    }
+}
+
+/* For desktop: */
+@media only screen and (min-width: 1025px) {
+    .container {
+        padding: 0;
+    }
+
+    .portrait .image {
+        height: 410px;
+    }
+
+    .portrait .social-media {
+        padding: unset;
+        position: absolute;
+        right: 2rem;
+    }
+
+    .portrait .social-media ul {
+        flex-direction: column;
+    }
+
+    .portrait .social-media ul li {
+        margin: 4px 0;
+    }
+}
+
+/** End media queries */

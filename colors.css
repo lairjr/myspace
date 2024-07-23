@@ -1,0 +1,8 @@
+:root {
+    --blue: #2274A5;
+    --light-brown: #FFCF99;
+    --mid-brown: #FFC07F;
+    --black: #170312;
+
+    --card-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.55);
+}

@@ -1,0 +1,35 @@
+.work {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background: var(--light-brown);
+    padding: 1rem 0;
+    color: var(--black);
+}
+
+.work h1, .work h2, .work h3 {
+    padding: 0 1rem;
+}
+
+.work .container {
+    flex-direction: column;
+}
+
+.work .cards-container .card {
+    display: flex;
+    padding: 0 1rem;
+}
+
+.work .card .info {
+    width: 30%;
+}
+
+.work .card .description {
+    width: 70%;
+}
+
+/* For tablets: */
+@media only screen and (min-width: 600px) {
+}
