@@ -5,5 +5,5 @@
     flex-direction: column;
     position: relative;
     padding: 1rem 0;
-    background-color: var(--mid-brown);
+    background: var(--cream);
 }

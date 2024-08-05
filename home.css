@@ -4,8 +4,9 @@
     align-items: center;
     flex-direction: column;
     padding-top: 60px;
-    background: var(--light-brown);
+    background: var(--light-cream);
     color: var(--black);
+    scroll-margin-top: 60px;
 }
 
 .page h1, .page h2, .page h3, .page span {
@@ -19,20 +20,16 @@
 
 .introduction .pronunciation {
     margin: auto 1rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 300;
 }
 
 .introduction .greeting {
-    color: var(--blue);
+    color: var(--orange);
 }
 
 .introduction .short-about {   
-    margin: 2rem 0;
-    background: #FBA04B;
     padding: 1rem;
-    border-radius: 10px;
-    box-shadow: var(--card-shadow);
 }
 
 .introduction .rotate {
@@ -72,11 +69,10 @@
 }
 
 .portrait .image {
-    height: 350px;
+    height: 305px;
     border: 5px solid;
     border-radius: 10px;
     border-color: var(--black);
-    background: lemonchiffon;
     overflow: hidden;
     box-shadow: var(--card-shadow);
 }
@@ -123,6 +119,10 @@
         width: 50%;
     }
 
+    .introduction .pronunciation {
+        font-size: 1.5rem;
+    }
+
     .portrait {
         width: 50%;
     }
@@ -135,7 +135,7 @@
     }
 
     .portrait .image {
-        height: 410px;
+        height: 305px;
     }
 
     .portrait .social-media {

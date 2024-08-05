@@ -4,13 +4,18 @@
     align-items: center;
     flex-direction: column;
     position: relative;
-    background: var(--light-brown);
+    background: var(--light-cream);
     padding: 1rem 0;
     color: var(--black);
+    scroll-margin-top: 80px;
 }
 
 .work h1, .work h2, .work h3 {
     padding: 0 1rem;
+}
+
+.work h2 {
+    color: var(--orange);
 }
 
 .work .container {
@@ -19,17 +24,29 @@
 
 .work .cards-container .card {
     display: flex;
-    padding: 0 1rem;
 }
 
 .work .card .info {
     width: 30%;
 }
 
+.work .card .info .period {
+    margin: auto 1rem;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
 .work .card .description {
     width: 70%;
 }
 
+.work .card .description ul {
+    padding: 0 1rem;
+}
+
 /* For tablets: */
 @media only screen and (min-width: 600px) {
+    .work .card .info .period {
+        font-size: 1.25rem;
+    }
 }
