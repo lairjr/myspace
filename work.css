@@ -4,7 +4,7 @@
     align-items: center;
     flex-direction: column;
     position: relative;
-    background: var(--light-cream);
+    background: var(--cream);
     padding: 1rem 0;
     color: var(--black);
     scroll-margin-top: 80px;
@@ -24,10 +24,27 @@
 
 .work .cards-container .card {
     display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    border-bottom: 1px dotted var(--black);
+}
+
+.work .cards-container .card:last-child {
+    border-bottom: 0;
 }
 
 .work .card .info {
-    width: 30%;
+    width: 100%;
+}
+
+.work .card .info .tools {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem calc(1rem - 2px);
+}
+
+.work .card .info .tools .chip {
+    margin: 2px 2px;
 }
 
 .work .card .info .period {
@@ -37,16 +54,36 @@
 }
 
 .work .card .description {
-    width: 70%;
+    width: 100%;
 }
 
 .work .card .description ul {
     padding: 0 1rem;
 }
 
+
+@media only screen and (max-width: 599px) {
+    .work .card .info h3 {
+        font-size: 1.25rem;
+    }
+}
+
 /* For tablets: */
 @media only screen and (min-width: 600px) {
+    .work .cards-container .card {
+        display: flex;
+        flex-direction: row;
+    }
+
     .work .card .info .period {
         font-size: 1.25rem;
+    }
+
+    .work .card .info {
+        width: 30%;
+    }
+
+    .work .card .description {
+        width: 70%;
     }
 }

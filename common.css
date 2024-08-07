@@ -209,7 +209,7 @@ a:hover {
 
 .menu ul {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   column-gap: 1px;
   margin: 1rem 0;
   background-color: var(--cream);
@@ -273,6 +273,40 @@ a:hover {
     padding: 8px;
     margin: -4px;
     border-radius: 5px;
+}
+
+.inline-link {
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.inline-link:hover {
+  color: var(--brown);
+}
+
+.inline-link h3 {
+  position: relative;
+}
+
+.inline-link h3::after {
+  position: absolute;
+  left: 1rem;
+  content: " ";
+  display: block;
+  height: 2px;
+  border-bottom: 2px solid var(--black);
+  width: 0;
+  transition: width .5s;
+}
+
+.inline-link:hover h3::after {
+  width: 100%;
+}
+
+.inline-link svg {
+  margin-left: -10px;
 }
 
 /** Begin media queries */
