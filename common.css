@@ -309,6 +309,24 @@ a:hover {
   margin-left: -10px;
 }
 
+.fade {
+  opacity: 0;
+  transition: transform .6s, opacity .9s;
+}
+
+.fade.bottom {
+  transform: translate(0, 45px);
+}
+
+.fade.right {
+  transform: translate(45px, 0);
+}
+
+.fade.visible {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
 /** Begin media queries */
 
 /* For tablets: */

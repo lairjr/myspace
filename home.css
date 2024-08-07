@@ -15,7 +15,6 @@
 
 .introduction {
     width: 100%;
-    animation: .4s ease-out 0s 1 slideInFromBottom;
 }
 
 .introduction .pronunciation {
@@ -69,7 +68,8 @@
 }
 
 .portrait .image {
-    height: 305px;
+    height: 295px;
+    width: 280px;
     border: 5px solid;
     border-radius: 10px;
     border-color: var(--black);
@@ -79,7 +79,6 @@
 
 .portrait .social-media {
     padding: 1rem 0;
-    animation: .4s ease-out 0s 1 slideInFromRight;
 }
 
 .portrait .social-media ul {

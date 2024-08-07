@@ -59,10 +59,17 @@
 
 .about .skills ul li .line {
     height: 0;
-    flex: 1;
+    flex: 0;
+    width: 0;
     margin: 0 14px;
     border-bottom: 2px dotted var(--black);
-    animation: .8s ease-out growLateral;
+    transition: 1s ease-out width;
+    transition: 1s ease-out flex;
+}
+
+.about .skills ul li .line.visible {
+    width: 100%;
+    flex: 1;
 }
 
 .about .bio {

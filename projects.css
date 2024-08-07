@@ -79,4 +79,250 @@
         height: 100%;
         border-right: 1px dotted black;
     }
+
+}.projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background: var(--light-cream);
+    padding: 1rem 0;
+    color: var(--black);
+    scroll-margin-top: 80px;
+}
+
+.projects h1, .projects h2, .projects h3 {
+    padding: 0 1rem;
+}
+
+.projects h2 {
+    color: var(--orange);
+}
+
+.projects .container {
+    flex-direction: column;
+}
+
+.projects .cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 1rem;
+}
+
+.projects .cards-container .card {
+    color: var(--black);
+    width: 100%;
+}
+
+.projects .cards-container .card .description {
+    padding: .5rem 1rem;
+}
+
+.projects .cards-container .card .tools {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem calc(1rem - 2px);
+}
+
+.projects .cards-container .card .tools .chip {
+    margin: 2px 2px;
+}
+
+.projects .card-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.projects .card-separator .line {
+    flex: 1;
+    margin: 0 1rem;
+    border-bottom: 1px dotted black;
+}
+
+/* For tablets: */
+@media only screen and (min-width: 600px) {
+    .projects .cards-container {
+        flex-direction: row;
+    }
+
+    .projects .cards-container .card {
+        width: 50%;
+    }
+
+    .projects .card-separator {
+        width: 2%;
+    }
+
+    .projects .card-separator .line {
+        height: 100%;
+        border-right: 1px dotted black;
+    }
+
+}.projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background: var(--light-cream);
+    padding: 1rem 0;
+    color: var(--black);
+    scroll-margin-top: 80px;
+}
+
+.projects h1, .projects h2, .projects h3 {
+    padding: 0 1rem;
+}
+
+.projects h2 {
+    color: var(--orange);
+}
+
+.projects .container {
+    flex-direction: column;
+}
+
+.projects .cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 1rem;
+}
+
+.projects .cards-container .card {
+    color: var(--black);
+    width: 100%;
+}
+
+.projects .cards-container .card .description {
+    padding: .5rem 1rem;
+}
+
+.projects .cards-container .card .tools {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem calc(1rem - 2px);
+}
+
+.projects .cards-container .card .tools .chip {
+    margin: 2px 2px;
+}
+
+.projects .card-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.projects .card-separator .line {
+    flex: 1;
+    margin: 0 1rem;
+    border-bottom: 1px dotted black;
+}
+
+/* For tablets: */
+@media only screen and (min-width: 600px) {
+    .projects .cards-container {
+        flex-direction: row;
+    }
+
+    .projects .cards-container .card {
+        width: 50%;
+    }
+
+    .projects .card-separator {
+        width: 2%;
+    }
+
+    .projects .card-separator .line {
+        height: 100%;
+        border-right: 1px dotted black;
+    }
+
+}.projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background: var(--light-cream);
+    padding: 1rem 0;
+    color: var(--black);
+    scroll-margin-top: 80px;
+}
+
+.projects h1, .projects h2, .projects h3 {
+    padding: 0 1rem;
+}
+
+.projects h2 {
+    color: var(--orange);
+}
+
+.projects .container {
+    flex-direction: column;
+}
+
+.projects .cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 1rem;
+}
+
+.projects .cards-container .card {
+    color: var(--black);
+    width: 100%;
+}
+
+.projects .cards-container .card .description {
+    padding: .5rem 1rem;
+}
+
+.projects .cards-container .card .tools {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem calc(1rem - 2px);
+}
+
+.projects .cards-container .card .tools .chip {
+    margin: 2px 2px;
+}
+
+.projects .card-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.projects .card-separator .line {
+    flex: 1;
+    margin: 0 1rem;
+    border-bottom: 1px dotted black;
+}
+
+/* For tablets: */
+@media only screen and (min-width: 600px) {
+    .projects .cards-container {
+        flex-direction: row;
+    }
+
+    .projects .cards-container .card {
+        width: 50%;
+    }
+
+    .projects .card-separator {
+        width: 2%;
+    }
+
+    .projects .card-separator .line {
+        height: 100%;
+        border-right: 1px dotted black;
+    }
 }
