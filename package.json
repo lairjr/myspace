@@ -2,9 +2,6 @@
   "name": "myspace",
   "version": "1.0.0",
   "description": "This is my space website.",
-  "scripts": {
-    "sass": "./node_modules/sass/sass.js styles.scss styles.css"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lairjr/myspace.git"
@@ -14,8 +11,5 @@
   "bugs": {
     "url": "https://github.com/lairjr/myspace/issues"
   },
-  "homepage": "https://github.com/lairjr/myspace#readme",
-  "devDependencies": {
-    "sass": "^1.53.0"
-  }
+  "homepage": "https://github.com/lairjr/myspace#readme"
 }
