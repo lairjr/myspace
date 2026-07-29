@@ -57,6 +57,7 @@ function markdownToHtml(markdown) {
   let paragraphLines = [];
   let listItems = [];
   let listType = 'ul';
+  let quoteLines = [];
 
   function flushParagraph() {
     if (paragraphLines.length) {
@@ -74,6 +75,13 @@ function markdownToHtml(markdown) {
     }
   }
 
+  function flushQuote() {
+    if (quoteLines.length) {
+      htmlParts.push(`<blockquote><p>${inlineMarkdown(quoteLines.join(' '))}</p></blockquote>`);
+      quoteLines = [];
+    }
+  }
+
   let inCodeBlock = false;
   let codeLang = '';
   let codeLines = [];
@@ -86,6 +94,7 @@ function markdownToHtml(markdown) {
       if (!inCodeBlock) {
         flushParagraph();
         flushList();
+        flushQuote();
         inCodeBlock = true;
         codeLang = fenceMatch[1];
         codeLines = [];
@@ -107,6 +116,7 @@ function markdownToHtml(markdown) {
     if (trimmed === '') {
       flushParagraph();
       flushList();
+      flushQuote();
       continue;
     }
 
@@ -114,14 +124,24 @@ function markdownToHtml(markdown) {
     if (headingMatch) {
       flushParagraph();
       flushList();
+      flushQuote();
       const level = headingMatch[1].length;
       htmlParts.push(`<h${level}>${inlineMarkdown(headingMatch[2])}</h${level}>`);
+      continue;
+    }
+
+    const quoteMatch = trimmed.match(/^>\s?(.*)$/);
+    if (quoteMatch) {
+      flushParagraph();
+      flushList();
+      quoteLines.push(quoteMatch[1]);
       continue;
     }
 
     const listMatch = trimmed.match(/^[-*]\s+(.*)$/);
     if (listMatch) {
       flushParagraph();
+      flushQuote();
       if (listType !== 'ul' && listItems.length) flushList();
       listType = 'ul';
       listItems.push(listMatch[1]);
@@ -131,31 +151,36 @@ function markdownToHtml(markdown) {
     const orderedMatch = trimmed.match(/^\d+[.)]\s+(.*)$/);
     if (orderedMatch) {
       flushParagraph();
+      flushQuote();
       if (listType !== 'ol' && listItems.length) flushList();
       listType = 'ol';
       listItems.push(orderedMatch[1]);
       continue;
     }
 
+    flushQuote();
     paragraphLines.push(trimmed);
   }
 
   flushParagraph();
   flushList();
+  flushQuote();
 
   return htmlParts.join('\n');
 }
 
 const LANG_LABELS = {
   en: 'Read in English',
+  pt: 'Ler em Português',
   'pt-br': 'Ler em Português',
 };
 
 // The source `slug` is the article's identifier, shared across languages.
-// The URL slug (output filename) adds a `-pt-br` suffix so both files don't
-// collide on disk.
+// The original (whatever language it's written in) keeps the bare slug;
+// a translated counterpart gets its language code appended so it doesn't
+// collide with the original on disk.
 function urlSlugFor(meta) {
-  return meta.language === 'pt-br' ? `${meta.slug}-pt-br` : meta.slug;
+  return meta.version === 'ai-translated' ? `${meta.slug}-${meta.language}` : meta.slug;
 }
 
 function findCounterpart(meta, identifierMap) {
