@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Uma série mensal no Instagram do Go Champs saiu de um processo manual de 4-5 horas para um fluxo de 1-2 minutos rodado por um agente — e a reação que veio depois diz mais sobre maturidade em IA do que a automação em si." />
+  <meta name="keywords" content="ia,produto,automacao,go-champs,engenharia" />
+  <meta name="robots" content="index, follow">
+  <title>Se você teve um momento 'ah-há' com IA recentemente — seu uso de IA está amadurecendo | Lair Júnior</title>
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <link href="../colors.css" rel="stylesheet" type="text/css" />
+  <link href="../common.css" rel="stylesheet" type="text/css" />
+  <link href="../footer.css" rel="stylesheet" type="text/css" />
+  <link href="../blog.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="blog-article">
+    <div class="container">
+      <a href="../blog.html" class="back-link">&larr; Back to blog</a>
+
+      <article>
+        <h1>Se você teve um momento 'ah-há' com IA recentemente — seu uso de IA está amadurecendo</h1>
+
+        <div class="origin-row">
+          <span class="origin-badge translated">AI Translated</span>
+          <a href="ai-aha-moment-maturing-usage.html" class="lang-switch">Read in English</a>
+        </div>
+
+        <div class="meta">
+          <span class="date">2026-07-28</span>
+          <span class="reading-time">5 min de leitura</span>
+        </div>
+
+        <span class="tools">
+          <div class="chip">ia</div>
+          <div class="chip">produto</div>
+          <div class="chip">automacao</div>
+          <div class="chip">go-champs</div>
+          <div class="chip">engenharia</div>
+        </span>
+
+        <div class="content">
+<p>Não faz muito tempo, nossa líder de mídias sociais olhou pro que tinha acabado de acontecer com o próprio fluxo de trabalho dela e falou algo como: <em>"Ha ha... então É ASSIM que dizem que a gente usa IA no trabalho."</em> Não foi deboche. Foi reação. Ela já usava IA antes — pra gerar ideias, rascunhar legendas, até desenhar os templates dos cards. O que ela não esperava era o momento em que a IA parou de ajudar no trabalho e passou a fazer o trabalho.</p>
+<p>Essa reação é o assunto real deste artigo. Não a ferramenta. O momento.</p>
+<h2>O processo antes</h2>
+<p>Na Go Champs, todo mês publicamos uma série no Instagram: o Top 5 recordes do mês na plataforma. Conceito simples, execução cansativa. Alguém puxa os dados do banco. Outra pessoa copia o template do card no Canva, cinco vezes, e ajusta manualmente nomes, números e estatísticas pra bater com os dados. Duas pessoas, quatro a cinco horas, mês após mês, só pra publicar cinco cards.</p>
+<p>A IA já tinha entrado nesse processo antes de qualquer coisa mudar. Nossa líder de mídias sociais usava pra pensar o conceito da série e pra ajudar a desenhar o próprio template no Canva. Isso é um uso real de IA — mas é IA como apoio criativo, fora do gargalo de verdade. O gargalo nunca foi a ideia. Era a ponte manual entre "o dado existe" e "o card está no Instagram".</p>
+<h2>O que mudou</h2>
+<p>Fechamos essa ponte. Não com um prompt único, mas com um conjunto pequeno de ferramentas feitas pra isso: um template no Canva pensado pra ser preenchido programaticamente, algumas skills, e um playbook amarrando tudo. Em cima disso, um agente conectado via MCP que roda as queries de verdade no banco e atualiza os cards do Top 5 direto no Canva.</p>
+<p>Agora o pedido é só: "gera o Top 5". O agente consulta a plataforma, puxa os recordes, atualiza os cards. O que levava duas pessoas de quatro a cinco horas agora leva de um a dois minutos.</p>
+<p>Isso não é um ajuste de produtividade. É um formato de trabalho diferente.</p>
+<h2>Por que a reação importou mais que a automação</h2>
+<p>Aqui está a parte que fico revisitando. A construção técnica — queries, templates, integração via MCP — é o tipo de trabalho que engenheiro faz o tempo todo. Não trivial, mas familiar. O que foi novo foi ver alguém de fora da engenharia enxergar o resultado e reconhecer na hora o que aquilo significava, em voz alta, com aquela mistura específica de graça e descrença.</p>
+<p>Essa reação é um sinal. Adoção inicial de IA parece curiosidade — "vamos ver o que ela consegue rascunhar". Depois parece utilidade — recorrer a ela pra tarefas específicas, tipo ideias de template ou uma primeira versão de legenda. O que aconteceu com a série do Top 5 foi um terceiro estágio: a IA absorvendo um fluxo inteiro, <em>end-to-end</em>, do dado ao material pronto pra publicar, sem ninguém no meio do caminho além de quem pede.</p>
+<p>O momento "ah-há" é o que acontece quando alguém que viveu o estágio um e dois vê o estágio três chegar na própria mesa. Não é descrença de que a IA consegue fazer isso. É o reconhecimento de que a distância entre "a IA me ajuda a trabalhar" e "a IA faz essa parte do trabalho" acabou de fechar, em silêncio, enquanto todo mundo estava olhando pra outra coisa.</p>
+<h2>A mudança real: de assistente pra operadora</h2>
+<p>Usar IA pra puxar ideia de legenda ou de template é IA como assistente — útil, mas limitada a uma etapa que ainda é sua. O que construímos pra série do Top 5 é diferente: IA como operadora dentro de um processo, com ferramentas próprias, conexão própria com dado real, e um trabalho definido pra terminar — não só uma sugestão pra oferecer.</p>
+<p>Essa diferença é, pra mim, a curva de maturidade real em que as pessoas estão agora. Não é "você usa IA" — quase todo mundo usa, em algum lugar. A pergunta de verdade é se a IA ainda está presa às partes do trabalho que você supervisiona passo a passo, ou se já entregaram um resultado inteiro pra ela.</p>
+<h2>O que eu diria pra outros times</h2>
+<p>Não comece tentando automatizar tudo de uma vez. A gente não começou assim. A IA ajudou no template e nas ideias muito antes de encostar no banco de dados. A versão <em>end-to-end</em> só virou possível porque os usos menores vieram primeiro — foram eles que revelaram o gargalo de verdade (a ponte manual, não o trabalho criativo) e deram um template e um processo que valia a pena conectar a um agente.</p>
+<p>Se uma parte repetitiva e bem definida do seu trabalho ainda depende de duas pessoas e algumas horas todo mês, isso geralmente é sinal de que as peças já existem — fonte de dado, template, processo — só ainda não foram conectadas.</p>
+<h2>Onde isso nos deixa</h2>
+<p>Nossa série do Top 5 ainda tem uma pessoa por trás — alguém que decide rodar, confere o resultado, publica. Isso não vai deixar de existir, e acho que não deveria. O que mudou foi tudo entre a decisão e o resultado.</p>
+<p>Se você teve sua própria versão desse momento "ha ha, então É ASSIM que a gente usa IA agora", encare como um marcador, não como uma meta a perseguir. Ele significa que algum pedaço do seu trabalho cruzou, em silêncio, de assistido-por-IA pra operado-por-IA. A pergunta interessante não é se isso impressiona — é se você sabe exatamente qual pedaço foi esse, e se ele merece continuar assim.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <script src="/footer.js"></script>
+  <script src="/nav.js"></script>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>

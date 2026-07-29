@@ -8,7 +8,9 @@
   "tags": ["ai", "product", "automation", "go-champs", "engineering"],
   "description": "A monthly Instagram series at Go Champs went from a 4-5 hour manual process to a 1-2 minute agent-driven workflow — and the reaction that followed says more about AI maturity than the automation itself.",
   "wordCount": 0,
-  "readingTime": "5 min read"
+  "readingTime": "5 min read",
+  "language": "en",
+  "version": "original"
 }
 ```
 

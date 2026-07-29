@@ -146,7 +146,42 @@ function markdownToHtml(markdown) {
   return htmlParts.join('\n');
 }
 
-function renderArticlePage(meta, bodyHtml) {
+const LANG_LABELS = {
+  en: 'Read in English',
+  'pt-br': 'Ler em Português',
+};
+
+// The source `slug` is the article's identifier, shared across languages.
+// The URL slug (output filename) adds a `-pt-br` suffix so both files don't
+// collide on disk.
+function urlSlugFor(meta) {
+  return meta.language === 'pt-br' ? `${meta.slug}-pt-br` : meta.slug;
+}
+
+function findCounterpart(meta, identifierMap) {
+  const byLang = identifierMap.get(meta.slug);
+  if (!byLang) return null;
+  for (const other of byLang.values()) {
+    if (other !== meta) return other;
+  }
+  return null;
+}
+
+function renderOriginBadge(meta) {
+  const isTranslated = meta.version === 'ai-translated';
+  const label = isTranslated ? 'AI Translated' : 'Original';
+  const cssClass = isTranslated ? 'translated' : 'original';
+  return `<span class="origin-badge ${cssClass}">${label}</span>`;
+}
+
+function renderLangSwitch(meta, identifierMap) {
+  const counterpart = findCounterpart(meta, identifierMap);
+  if (!counterpart) return '';
+  const label = LANG_LABELS[counterpart.language] || 'Read translation';
+  return `<a href="${counterpart.urlSlug}.html" class="lang-switch">${escapeHtml(label)}</a>`;
+}
+
+function renderArticlePage(meta, bodyHtml, identifierMap) {
   return `<!DOCTYPE html>
 <html>
 
@@ -176,6 +211,11 @@ function renderArticlePage(meta, bodyHtml) {
 
       <article>
         <h1>${escapeHtml(meta.title)}</h1>
+
+        <div class="origin-row">
+          ${renderOriginBadge(meta)}
+          ${renderLangSwitch(meta, identifierMap)}
+        </div>
 
         <div class="meta">
           <span class="date">${escapeHtml(meta.publishedAt)}</span>
@@ -208,7 +248,7 @@ function renderCard(meta) {
     [meta.title, meta.description, ...meta.tags].join(' ').toLowerCase()
   );
 
-  return `        <a href="blog/${meta.slug}.html" class="card" data-search="${searchText}">
+  return `        <a href="blog/${meta.urlSlug}.html" class="card" data-search="${searchText}">
           <h3>${escapeHtml(meta.title)}</h3>
           <span class="date">${escapeHtml(meta.publishedAt)} &middot; ${escapeHtml(meta.readingTime)}</span>
           <p class="description">${escapeHtml(meta.description)}</p>
@@ -270,38 +310,49 @@ ${cardsHtml}
 }
 
 function build() {
-  const files = fs
-    .readdirSync(SOURCE_DIR)
-    .filter((file) => file.endsWith('.md') && !file.endsWith('.pt-br.md'));
+  const files = fs.readdirSync(SOURCE_DIR).filter((file) => file.endsWith('.md'));
 
   fs.mkdirSync(OUT_DIR, { recursive: true });
 
-  const metaList = [];
-  const seenSlugs = new Map();
+  const articles = [];
+  const identifierMap = new Map(); // source slug (identifier) -> Map(language -> meta)
+  const seenUrlSlugs = new Map();
 
   for (const file of files) {
     const raw = fs.readFileSync(path.join(SOURCE_DIR, file), 'utf8');
     const { meta, body } = parseArticle(raw);
+    meta.urlSlug = urlSlugFor(meta);
 
-    if (seenSlugs.has(meta.slug)) {
+    if (seenUrlSlugs.has(meta.urlSlug)) {
       throw new Error(
-        `duplicate slug "${meta.slug}": ${seenSlugs.get(meta.slug)} and ${file}`
+        `duplicate slug "${meta.urlSlug}": ${seenUrlSlugs.get(meta.urlSlug)} and ${file}`
       );
     }
-    seenSlugs.set(meta.slug, file);
+    seenUrlSlugs.set(meta.urlSlug, file);
 
-    const bodyHtml = markdownToHtml(body);
+    if (!identifierMap.has(meta.slug)) identifierMap.set(meta.slug, new Map());
+    identifierMap.get(meta.slug).set(meta.language, meta);
 
-    fs.writeFileSync(path.join(OUT_DIR, `${meta.slug}.html`), renderArticlePage(meta, bodyHtml));
-
-    metaList.push(meta);
+    articles.push({ meta, body });
   }
+
+  for (const { meta, body } of articles) {
+    const bodyHtml = markdownToHtml(body);
+    fs.writeFileSync(
+      path.join(OUT_DIR, `${meta.urlSlug}.html`),
+      renderArticlePage(meta, bodyHtml, identifierMap)
+    );
+  }
+
+  const metaList = articles
+    .map(({ meta }) => meta)
+    .filter((meta) => meta.version !== 'ai-translated');
 
   metaList.sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
 
   fs.writeFileSync(BLOG_LIST_PATH, renderBlogListPage(metaList));
 
-  console.log(`Built ${metaList.length} article(s): blog.html + blog/*.html`);
+  console.log(`Built ${articles.length} article(s), ${metaList.length} listed: blog.html + blog/*.html`);
 }
 
 build();

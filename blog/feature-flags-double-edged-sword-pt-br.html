@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Feature flags são poderosas, mas quando tratadas como arquitetura permanente em vez de andaime temporário, viram dívida técnica, risco de indisponibilidade e sobrecarga cognitiva. Três anti-padrões e a correção de cada um." />
+  <meta name="keywords" content="tech,feature-flags,javascript,desenvolvimento-de-software,feature-toggles" />
+  <meta name="robots" content="index, follow">
+  <title>A Faca de Dois Gumes das Feature Flags: Quando Boas Intenções Dão Errado | Lair Júnior</title>
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <link href="../colors.css" rel="stylesheet" type="text/css" />
+  <link href="../common.css" rel="stylesheet" type="text/css" />
+  <link href="../footer.css" rel="stylesheet" type="text/css" />
+  <link href="../blog.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="blog-article">
+    <div class="container">
+      <a href="../blog.html" class="back-link">&larr; Back to blog</a>
+
+      <article>
+        <h1>A Faca de Dois Gumes das Feature Flags: Quando Boas Intenções Dão Errado</h1>
+
+        <div class="origin-row">
+          <span class="origin-badge translated">AI Translated</span>
+          <a href="feature-flags-double-edged-sword.html" class="lang-switch">Read in English</a>
+        </div>
+
+        <div class="meta">
+          <span class="date">2025-07-15</span>
+          <span class="reading-time">2 min de leitura</span>
+        </div>
+
+        <span class="tools">
+          <div class="chip">tech</div>
+          <div class="chip">feature-flags</div>
+          <div class="chip">javascript</div>
+          <div class="chip">desenvolvimento-de-software</div>
+          <div class="chip">feature-toggles</div>
+        </span>
+
+        <div class="content">
+<p>Sou grande fã de Feature Flags (também chamadas de Feature Toggles). Pra quem não conhece, são basicamente chaves condicionais no código que permitem fazer deploy de uma funcionalidade nova _sem_ liberar ela pros usuários de imediato. Isso viabiliza:</p>
+<ul><li>Deploys mais seguros (dark launching, canary releases)</li><li>Testes em produção</li><li>Kill switches instantâneos pra features com bug</li><li>Segmentação granular de usuário (por geografia, conta, etc.)</li></ul>
+<p>Mas aqui vai o ponto crítico: feature flags brilham quando são de vida curta. São ferramentas táticas, não arquitetura permanente. Infelizmente, já vi times usarem elas sem cuidado — ignorando gestão de ciclo de vida e riscos operacionais. Vamos destrinchar os anti-padrões.</p>
+<h2>Red Flag 1: Tratar Flags como Configuração Permanente</h2>
+<p>O Pecado: usar flags pra customizações de cliente de longo prazo (ex.: <code>flag_customer_x_ui_flow</code>). O Custo:</p>
+<ul><li>Dívida técnica infla conforme flags obsoletas se acumulam</li><li>Proliferação de flags deixa o código imprevisível (<code>if flag_a &amp;&amp; !flag_b &amp;&amp; flag_c</code>...)</li><li>Complexidade de teste explode combinatoriamente</li></ul>
+<p>A Correção: → Converter isso em "configurações de comportamento" guardadas no banco. Armazene ajustes tipo <code>customer_x_ui_flow_enabled</code> no seu próprio banco. Benefícios:</p>
+<ul><li>Propriedade: sem lock-in de fornecedor nem indisponibilidade de terceiros</li><li>Auditabilidade: rastreie mudanças via logs da própria aplicação</li><li>Performance: evite chamadas HTTP em tempo de execução pro serviço de flags</li></ul>
+<h2>Red Flag 2: Ignorar os Modos de Falha de Terceiros</h2>
+<p>O Pecado: assumir que seu serviço de flags (LaunchDarkly, Split, etc.) vai estar _sempre_ disponível. O Desastre: quando o serviço de flags cai:</p>
+<ul><li>Aplicações podem quebrar (se o SDK der timeout)</li><li>Flags assumem valor padrão de forma imprevisível (ex.: desligando _todas_ as features)</li><li>Usuários enfrentam comportamento inconsistente</li></ul>
+<p>A Correção: → Implemente degradação graciosa:</p>
+<pre><code class="language-js">try {
+  featureEnabled = await featureFlagClient.getFlag("new-checkout");
+} catch (error) {
+  // Assume comportamento seguro durante indisponibilidades
+  featureEnabled = false;
+}</code></pre>
+<p>→ Faça cache local do estado das flags pra sobreviver a quedas curtas → Teste cenários de falha (desligue seu serviço de flags no staging!)</p>
+<h2>Red Flag 3: Flags Imortais</h2>
+<p>O Pecado: flags que nunca morrem ("isso é código temporário!"). A Consequência:</p>
+<ul><li>Configuration drift: flags apodrecem conforme os requisitos mudam</li><li>Riscos de segurança: flags esquecidas expõem features inacabadas</li><li>Sobrecarga cognitiva: engenheiro novo enfrenta "arqueologia de flag"</li></ul>
+<p>Uma Mentalidade Melhor: Na minha empresa anterior, chamávamos elas de "Rollout Flags" — um truque de nomenclatura deliberado:</p>
+<ol><li>Flags _precisam_ ter um plano de remoção definido de antemão (ex.: "remover após 90 dias")</li><li>Flags eram amarradas a marcos de rollout (não a "features" abstratas):</li></ol>
+<ul><li><code>flag_enable_checkout_phase_1</code> → remover após 95% de rollout</li><li><code>flag_migrate_legacy_billing</code> → remover após migração de dados</li></ul>
+<p>Isso nos forçou a:</p>
+<ul><li>Automatizar a limpeza de flags (ex.: CI falha se flag tem mais de 60 dias)</li><li>Tratar flags como andaime transitório, não como bloco de construção</li></ul>
+<h2>Minhas Regras de Ouro</h2>
+<ol><li>Vida Curta &gt; Permanente: flags são como sutura cirúrgica — remova assim que o ferimento cicatrizar.</li><li>Dono da Própria Configuração: comportamento específico de cliente? Use seu banco de dados, não um fornecedor de flags.</li><li>Planeje pra Falha: o que acontece quando seu serviço de flags explode?</li><li>Nomeie com Intenção: "Rollout Flags" &gt; "Feature Flags" (semântica molda comportamento!).</li></ol>
+<p>Feature flags são poderosas — mas com grande poder vem grande dívida técnica. Pode com força, projete na defensiva, e mantenha seu jardim de flags arrumado.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <script src="/footer.js"></script>
+  <script src="/nav.js"></script>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>
