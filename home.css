@@ -31,6 +31,29 @@
     padding: 1rem;
 }
 
+.introduction .cta {
+    padding: 0 0 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.introduction .cta a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--black);
+    border-radius: 5px;
+    background-color: var(--light-cream);
+    color: var(--black);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.introduction .cta a:hover {
+    background-color: var(--orange);
+    color: var(--cream);
+}
+
 .introduction .rotate {
     overflow: hidden;
     height: 2rem;
@@ -124,6 +147,12 @@
 
     .introduction .pronunciation {
         font-size: 1.5rem;
+    }
+
+    .introduction .cta {
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 1rem;
     }
 
     .portrait {

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Feature flags are powerful, but when treated as permanent architecture instead of short-lived scaffolding, they turn into technical debt, outage risk, and cognitive overhead. Three anti-patterns and the fixes for each." />
+  <meta name="keywords" content="tech,feature-flags,javascript,software-development,feature-toggles" />
+  <meta name="robots" content="index, follow">
+  <title>The Double-Edged Sword of Feature Flags: When Good Intentions Go Bad | Lair Júnior</title>
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <link href="../colors.css" rel="stylesheet" type="text/css" />
+  <link href="../common.css" rel="stylesheet" type="text/css" />
+  <link href="../footer.css" rel="stylesheet" type="text/css" />
+  <link href="../blog.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="blog-article">
+    <div class="container">
+      <a href="../blog.html" class="back-link">&larr; Back to blog</a>
+
+      <article>
+        <h1>The Double-Edged Sword of Feature Flags: When Good Intentions Go Bad</h1>
+
+        <div class="meta">
+          <span class="date">2025-07-15</span>
+          <span class="reading-time">2 min read</span>
+        </div>
+
+        <span class="tools">
+          <div class="chip">tech</div>
+          <div class="chip">feature-flags</div>
+          <div class="chip">javascript</div>
+          <div class="chip">software-development</div>
+          <div class="chip">feature-toggles</div>
+        </span>
+
+        <div class="content">
+<p>I'm a huge fan of Feature Flags (a.k.a. Feature Toggles). For the uninitiated, they're essentially conditional code switches that let you deploy new functionality _without_ immediately releasing it to users. This enables:</p>
+<ul><li>Safer deployments (dark launching, canary releases)</li><li>Testing in production</li><li>Instant kill switches for faulty features</li><li>Granular user targeting (by geo, account, etc.)</li></ul>
+<p>But here's the critical nuance: Feature flags shine brightest when they're short-lived. They're tactical tools, not permanent architecture. Unfortunately, I've seen teams use them recklessly — ignoring lifecycle management and operational risks.</p>
+<p>Let's unpack the anti-patterns.</p>
+<h2>Red Flag 1: Treating Flags as Permanent Configuration</h2>
+<p>The Sin: Using flags for long-term customer-specific customizations (e.g., <code>flag_customer_x_ui_flow</code>). The Cost:</p>
+<ul><li>Tech debt balloons as stale flags accumulate</li><li>Flag sprawl makes codebases unpredictable (<code>if flag_a &amp;&amp; !flag_b &amp;&amp; flag_c</code>...)</li><li>Testing complexity explodes combinatorially</li></ul>
+<p>The Fix: → Convert these to database-backed "behavior configurations". Store settings like <code>customer_x_ui_flow_enabled</code> in your own DB. Benefits:</p>
+<ul><li>Ownership: No vendor lock-in or third-party outages</li><li>Auditability: Track changes via application-level logs</li><li>Performance: Avoid runtime HTTP calls to flag services</li></ul>
+<h2>Red Flag 2: Ignoring Third-Party Failure Modes</h2>
+<p>The Sin: Assuming your flag service (LaunchDarkly, Split, etc.) will _always_ be available. The Disaster: When the flag service goes down:</p>
+<ul><li>Applications may crash (if SDKs time out)</li><li>Flags default unpredictably (e.g., rolling back _all_ features)</li><li>Users experience inconsistent behavior</li></ul>
+<p>The Fix: → Implement graceful degradation:</p>
+<pre><code class="language-js">try {
+  featureEnabled = await featureFlagClient.getFlag("new-checkout");
+} catch (error) {
+  // Default to safe behavior during outages
+  featureEnabled = false;
+}</code></pre>
+<p>→ Cache flag states locally to survive short outages</p>
+<p>→ Test failure scenarios (disable your flag service in staging!)</p>
+<h2>Red Flag 3: Immortal Flags</h2>
+<p>The Sin: Flags that never die ("This is a temporary code!"). The Consequence:</p>
+<ul><li>Configuration drift: Flags decay as requirements change</li><li>Security risks: Forgotten flags expose unfinished features</li><li>Cognitive overhead: New engineers battle "flag archaeology"</li></ul>
+<p>A Better Mindset: At my last company, we called them "Rollout Flags" — a deliberate naming trick:</p>
+<ol><li>Flags _must_ have a removal plan upfront (e.g., "Remove after 90 days")</li><li>Flags were tied to rollout milestones (not abstract "features"):</li></ol>
+<ul><li><code>flag_enable_checkout_phase_1</code> → Remove after 95% rollout</li><li><code>flag_migrate_legacy_billing</code> → Remove after data migration</li></ul>
+<p>This forced us to:</p>
+<ul><li>Automate flag cleanup (e.g., CI fails if flags &gt;60 days old)</li><li>Treat flags as transient scaffolding, not building blocks</li></ul>
+<h2>My Golden Rules</h2>
+<ol><li>Short-Lived &gt; Permanent: Flags are like surgical sutures — remove them once the wound heals.</li><li>Own Your Config: Customer-specific behavior? Use your database, not a flag vendor.</li><li>Plan for Failure: What happens when your flag service explodes?</li><li>Name Intentionally: "Rollout Flags" &gt; "Feature Flags" (semantics shape behavior!).</li></ol>
+<p>Feature flags are powerful — but with great power comes great technical debt. Prune aggressively, design defensively, and keep your flag garden tidy.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <script src="/footer.js"></script>
+  <script src="/nav.js"></script>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>

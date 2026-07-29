@@ -2,10 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     position: relative;
     padding: 2rem 0;
     background: var(--light-cream);
+    border-top: 1px solid var(--border-color, #e0e0e0);
+}
+
+.footer .container {
+    flex-direction: row;
 }
 
 /* For tablets: */
