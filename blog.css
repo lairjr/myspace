@@ -211,6 +211,8 @@ body:has(.blog-article) {
     padding: 0.15em 0.4em;
     font-family: "Courier New", Courier, monospace;
     font-size: 0.9em;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .blog-article .content pre {

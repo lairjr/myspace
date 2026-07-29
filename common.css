@@ -189,8 +189,11 @@ a:hover {
 .container {
     display: flex;
     flex-direction: column;
+    width: 100%;
     max-width: 1140px;
+    min-width: 0;
     padding: 1rem;
+    box-sizing: border-box;
 }
 
 .menu {
