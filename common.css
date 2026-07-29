@@ -177,6 +177,10 @@ em {
   font-style: italic;
 }
 
+strong {
+  font-weight: bold;
+}
+
 a {
     color: var(--blue);
     transition: color .5s;
