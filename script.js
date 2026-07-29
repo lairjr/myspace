@@ -18,6 +18,14 @@ const observer = new IntersectionObserver(entries => {
     });
 }, observerOptions);
 
+const updateCopyrightYear = () => {
+    const currentYear = new Date().getFullYear();
+    const copyrightElement = document.getElementById('copyright-year');
+    if (copyrightElement) {
+        copyrightElement.textContent = currentYear;
+    }
+};
+
 window.addEventListener('DOMContentLoaded', () => {
     const fadeElems = document.querySelectorAll('.fade');
     const lineElems = document.querySelectorAll('.line');
@@ -29,4 +37,6 @@ window.addEventListener('DOMContentLoaded', () => {
     lineElems.forEach(element => {
         observer.observe(element);
     });
+
+    updateCopyrightYear();
 });
