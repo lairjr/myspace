@@ -1,0 +1,145 @@
+.blog-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background: var(--light-cream);
+    padding-top: 80px;
+    color: var(--black);
+    min-height: 100vh;
+}
+
+.blog-list .container {
+    flex-direction: column;
+}
+
+.blog-list h1 {
+    color: var(--orange);
+}
+
+.blog-list .search {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid var(--black);
+    border-radius: 5px;
+    background: var(--light-cream);
+    color: var(--black);
+    margin: 1rem 0 2rem;
+}
+
+.blog-list .cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+.blog-list .card {
+    display: block;
+    padding: 1.5rem;
+    border: 1px dotted var(--black);
+    border-radius: 5px;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.blog-list .card:hover {
+    border-color: var(--orange);
+}
+
+.blog-list .card h3 {
+    margin: 0;
+}
+
+.blog-list .card .date {
+    font-size: 0.875rem;
+    font-weight: 300;
+}
+
+.blog-list .card .description {
+    padding: 0.5rem 0;
+}
+
+.blog-list .card .tools {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 0.5rem;
+}
+
+.blog-list .card .tools .chip {
+    margin: 2px 2px 2px 0;
+}
+
+.blog-list .empty-state {
+    padding: 2rem 0;
+    font-weight: 300;
+}
+
+/* Article page */
+
+.blog-article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    background: var(--light-cream);
+    padding-top: 80px;
+    color: var(--black);
+}
+
+.blog-article .container {
+    flex-direction: column;
+}
+
+.blog-article .back-link {
+    color: var(--blue);
+    display: inline-block;
+    margin: 1rem 0;
+}
+
+.blog-article .meta {
+    display: flex;
+    gap: 1rem;
+    font-weight: 300;
+    padding: 0 1rem;
+}
+
+.blog-article .tools {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem calc(1rem - 2px);
+}
+
+.blog-article .tools .chip {
+    margin: 2px 2px;
+}
+
+.blog-article .content {
+    padding: 0 1rem 2rem;
+}
+
+.blog-article .content h2 {
+    color: var(--orange);
+}
+
+/* For tablets: */
+@media only screen and (min-width: 600px) {
+    .blog-list .cards-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .blog-list .card {
+        width: calc(50% - 1.5rem);
+    }
+}
+
+/* For desktops: */
+@media only screen and (min-width: 1025px) {
+    .blog-list .card {
+        width: calc(33.333% - 1.5rem);
+    }
+}

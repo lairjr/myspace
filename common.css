@@ -209,7 +209,7 @@ a:hover {
 
 .menu ul {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   column-gap: 1px;
   margin: 1rem 0;
   background-color: var(--cream);
